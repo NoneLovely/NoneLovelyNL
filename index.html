@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>NoneLovely</title>
+        <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+        <link rel="shortcut icon" href="https://i.postimg.cc/sDMQ0j7W/logo.png" type="image/png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div id="NoneLovely">
+            <iframe id="frame" frameborder="0" style="width: 100%; height: 99vh;"></iframe>
+        </div>
+
+        <script>
+            iframe = document.getElementById("frame")
+
+            if (window.innerHeight > window.innerWidth){
+                iframe.src = "https://script.google.com/macros/s/AKfycbxPQvCYMmStnGU-oA6EzrsquKrOlRoJITZ2Qd7z--5g_XC0oy3ygMpkeC38H3FbmHuGqw/exec" //mobile
+            } else {
+                iframe.src = "https://script.google.com/macros/s/AKfycbzJtr6jLiKGJRKbF1_zWvptsRxoeikTqI3l0XFmb3iR89_kGxhTH4PcZgFATLQDjB3p/exec" //pc
+            }
+        </script>
+    </body>
+</html>
