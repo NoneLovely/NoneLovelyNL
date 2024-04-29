@@ -1,32 +1,80 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="utf-8" />
-        <title>NoneLovely</title>
-        <script type="module" src="https://md-block.verou.me/md-block.js"></script>
-        <link rel="shortcut icon" href="https://i.postimg.cc/sDMQ0j7W/logo.png" type="image/png">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <meta property="og:title" content="Странник">
-        <meta property="og:site_name" content="NoneLovely">
-        <meta property="og:url" content="https://nonelovely.ru">
-        <meta property="og:description" content="твори и созидай">
-        <meta property="og:image" content="https://i.postimg.cc/15NWLQF3/None-Lovely.png">
-    </head>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <title>NoneLovelyStore</title>
 
-    <body>
-        <div id="NoneLovely">
-            <iframe id="frame" frameborder="0" style="width: 100%; height: 99vh;"></iframe>
-        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/dec-terminal-modern" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="shortcut icon" href="https://i.postimg.cc/sDMQ0j7W/logo.png" type="image/png">
+    <meta property="og:title" content="NoneLovely">
+    <meta property="og:site_name" content="NoneLovelyStore магазин приложений">
+    <meta property="og:url" content="https://nonelovely.ru">
+    <meta property="og:description" content="Легкость и доступность, множесто Web и Desktop приложений на продажу, а так же программы на заказ">
+    <meta property="og:image" content="https://i.postimg.cc/15NWLQF3/None-Lovely.png">
+    <style>
+        body {
+            font-family: 'DEC Terminal Modern', sans-serif;
+            font-size: 1.5em;
+        }
 
-        <script>
-            iframe = document.getElementById("frame")
+        #workspace {
+            overflow: auto;
+            -ms-overflow-style: none; 
+            overflow: -moz-scrollbars-none; 
+        }
+        #workspace::-webkit-scrollbar {
+            width: 0;
+        }
+        
+    </style>
 
-            if (window.innerHeight > window.innerWidth){
-                iframe.src = "https://script.google.com/macros/s/AKfycbxPQvCYMmStnGU-oA6EzrsquKrOlRoJITZ2Qd7z--5g_XC0oy3ygMpkeC38H3FbmHuGqw/exec" //mobile
-            } else {
-                iframe.src = "https://script.google.com/macros/s/AKfycbzJtr6jLiKGJRKbF1_zWvptsRxoeikTqI3l0XFmb3iR89_kGxhTH4PcZgFATLQDjB3p/exec" //pc
-            }
-        </script>
-    </body>
+</head>
+
+<body class="bg-black">
+    <div class="text-white text-center text-5xl m-5">
+        <p>NoneLovely</p>
+        <p class="text-xl">(совместно с <a class="hover:underline hover:text-white text-neutral-400" href="https://man-it-workshop.ru/">man-it</a>)</p>
+    </div>
+
+    <hr class="border-0 border-t-2 border-dashed">
+
+    <div class="my-10 md:mx-52">
+        <details class="text-white">
+            <summary class="p-5">NoneLovely</summary>
+            <p class="p-5 border-2 border-dashed rounded-3xl">Копирайтер, дизайнер, разработчик (python, c, c++, c#, Arduino, js, google script, html, css)</p>
+        </details>
+
+        <details class="text-white">
+            <summary class="p-5">Man-IT</summary>
+            <p class="p-5 border-2 border-dashed rounded-3xl">Бот системы, CRM, обучение, сайты, реклама и пиар, поставка IT услуг</p>
+        </details>
+
+        <details class="text-white">
+            <summary class="p-5">О проекте</summary>
+            <p class="p-5 border-2 border-dashed rounded-3xl">Проект нацелен на продажу и поставку пользователям web приложений, ботов, программ, в виде кода и услуг предоставляемых Man-IT и NoneLovely</p>
+        </details>
+    </div>
+
+    <hr class="border-0 border-t-2 border-dashed">
+
+
+    <div id="apps" class="text-white md:mx-52 p-5">
+        <p class="text-center text-3xl">услуги</p>
+        
+    </div>
+
+    <hr class="border-0 border-t-2 border-dashed">
+
+    <div class="text-white text-center mt-20 mb-5">
+        <p>разработка @NoneLovely совместно с @Man-IT</p>
+    </div>
+
+    <script src="store.js"></script>
+</body>
 </html>
