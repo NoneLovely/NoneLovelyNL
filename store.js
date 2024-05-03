@@ -1,27 +1,68 @@
 url = "https://script.google.com/macros/s/AKfycbwD8GdCWZ28aWOdC7H0Dw0Y2bkc6crhvi7NpZ0YJnV4BN2hw2DHGPVJema-bafNQmnV/exec"
 
-$.get(url + "?method=getApps", function(data, status){
+$.get(url + "?method=getOrder", function(data, status){
     result = data["NLS"]
+    k = 0
     for(let i = 0; i<result.length; i++){
         if(result[i][0] != ""){
-            app = document.createElement('div');
+            k += 1
+        }
+    
+    $("#order")[0].innerHTML = k + " заказ(а/ов)"
+    }
+})
+
+$.get(url + "?method=getFeedback", function(data, status){
+    result = data["NLS"]
+    k = 0
+    for(let i = 0; i<result.length; i++){
+        if(result[i][0] != ""){
+            k += 1
+            fb = document.createElement('div')
             
-            app.innerHTML = `
-            <div class="my-10 bg-black bg-opacity-40 rounded-3xl shadow-2xl xl:mx-10">
-                <div class="border-2 p-5 rounded-t-3xl">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwyElbC4QpUdvK69SeWhYbecR_fUCx0tRtHA7JmwYtb7UzLg/viewform?usp=sf_link" class="hover:text-white hover:underline text-neutral-400">`+ result[i][0] +`</a>
-                </div>
-                <div class="border-2 border-t-0 rounded-b-3xl">
-                    <details>
-                        <summary class="p-5">подробнее</summary>
-                        <p class="p-5">`+ result[i][1] +`</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwyElbC4QpUdvK69SeWhYbecR_fUCx0tRtHA7JmwYtb7UzLg/viewform?usp=sf_link" class="border-0 border-t-2 border-dashed py-5 w-full flex justify-center hover:text-white hover:underline text-neutral-400">заказать</a>
-                    </details>
-                </div>
+            fb.innerHTML = `
+            <div class="rounded-xl shadow-xl bg-black bg-opacity-5 my-5 mx-5 p-2.5 hover:shadow-md hover:text-black">
+                <p>
+                `+ result[i][2] +` - `+ result[i][0] +`/5
+                </p>
+                <p>
+                `+ result[i][1] +`
+                </p>
             </div>
             `
                     
-            document.getElementById("apps").appendChild(app)
+            document.getElementById("i_fb").appendChild(fb)
+        }
+    
+    $("#feedback")[0].innerHTML = k + " отзыв(а/ов)"
+    }
+})
+
+$.get(url + "?method=getPartners", function(data, status){
+    result = data["NLS"]
+    for(let i = 0; i<result.length; i++){
+        if(result[i][0] != ""){
+            p = document.createElement('div')
+
+            p.classList.add("my-5")
+            
+            p.innerHTML = `
+            <p class="font-bold tracking-widest">`+ result[i][0] +`</p>
+            <details class="text-left">
+                <summary>подробнее</summary>
+                <p>`+ result[i][1] +`</p>
+            </details>
+            `
+                    
+            document.getElementById("i_p").appendChild(p)
         }
     }
+})
+
+$.get(url + "?method=getMe", function(data, status){
+    result = data["NLS"]
+    $("#status")[0].innerHTML = result[0] 
+    $("#cc")[0].innerHTML = result[1] 
+    $("#comp")[0].innerHTML = result[2]
+    $("#dis")[0].innerHTML = result[3] 
 })
