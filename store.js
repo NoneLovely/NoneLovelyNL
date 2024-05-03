@@ -21,7 +21,7 @@ $.get(url + "?method=getFeedback", function(data, status){
             fb = document.createElement('div')
             
             fb.innerHTML = `
-            <div class="rounded-xl shadow-xl bg-black bg-opacity-5 my-5 mx-5 p-2.5 hover:shadow-md hover:text-black">
+            <div class="rounded-xl shadow-xl bg-black bg-opacity-5 my-5 mx-5 p-2.5">
                 <p>
                 `+ result[i][2] +` - `+ result[i][0] +`/5
                 </p>
