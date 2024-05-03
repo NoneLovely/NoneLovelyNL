@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     
-    <title>NoneLovelyStore</title>
+    <title>NoneLovely</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,50 +17,127 @@
     <meta property="og:url" content="https://nonelovely.ru">
     <meta property="og:description" content="Легкость и доступность, множесто Web и Desktop приложений на продажу, а так же программы на заказ">
     <meta property="og:image" content="https://i.postimg.cc/15NWLQF3/None-Lovely.png">
-    <link rel="stylesheet" href="store.css">
+    <style>
+        body {
+            font-family: 'DEC Terminal Modern', sans-serif;
+            font-size: 1.5em;;
+            background-image: url(https://i.pinimg.com/originals/9e/ec/3c/9eec3cd5c2a2064be3005409dca25f01.jpg);
+            background-attachment: fixed;
+            background-size: auto 100%;
+            min-height: 100vh;
+        }
+
+        #workspace {
+            overflow: auto;
+            -ms-overflow-style: none; 
+            overflow: -moz-scrollbars-none; 
+        }
+        #workspace::-webkit-scrollbar {
+            width: 0;
+        }
+
+
+        #logo {
+            padding: 72px 0px 220px;
+            position: relative;
+            background-color: #000000;
+        }
+
+        #logo::before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: '';
+            width: 50%;
+            padding-top: 30%;
+            background: #ffffff;
+            -ms-transform: skew(0, 15deg) translate(0, 50%);
+            -webkit-transform: skew(0, 15deg) translate(0, 50%);
+            -moz-transform: skew(0, 15deg) translate(0, 50%);
+            -o-transform: skew(0, 15deg) translate(0, 50%);
+            transform: skew(0, 15deg) translate(0, 50%);
+        }
+
+        #logo::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            content: '';
+            width: 50%;
+            padding-top: 30%;
+            background: #ffffff;
+            -ms-transform: skew(0, -15deg) translate(0, 50%);
+            -webkit-transform: skew(0, -15deg) translate(0, 50%);
+            -moz-transform: skew(0, -15deg) translate(0, 50%);
+            -o-transform: skew(0, -15deg) translate(0, 50%);
+            transform: skew(0, -15deg) translate(0, 50%);
+        }
+    </style>
 
 </head>
 
-<body class="bg-black">
-    <div class="bg">
-    <div class="text-white text-center text-5xl mt-0 pb-5 pt-5 bg-black bg-opacity-40">
-        <p>NoneLovely</p>
-        <p class="text-xl">(совместно с <a class="hover:underline hover:text-white text-neutral-400" href="https://man-it-workshop.ru/">man-it</a>)</p>
+<body class="bg-white text-center">
+    <div id="main">
+        <div id="info">
+            <div id="logo" class="bg-black min-h-80 flex justify-center">
+                <img src="https://i.postimg.cc/T3m9wctt/Untitled.png" class="bg-black min-h-80 shadow-2xl">
+            </div>
+            <div class="justify-center flex m-10">
+                <img src="https://i.postimg.cc/Ss5NGGNH/photo-5307890618313334570-x.jpg" class="rounded-full w-2/4 xl:w-1/5 md:w-1/3 sm:1/6 shadow-2xl border-8 z-10">
+            </div>
+            <div class="justify-center flex m-10">
+                <p class="font-bold tracking-widest underline z-10">NONELOVELY</p>
+            </div>
+            <div class="justify-center flex h-full m-10 -mt-80">
+                <div id="data_info" class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl w-full xl:w-1/2 md:w-2/3 py-80 xl:py-90 xl:py-50 min-h-80 shadow-2xl grid grid-cols-1 md:grid-cols-3 content-end px-10 pb-10 z-0">
+                        <a id="feedback" href="https://docs.google.com/forms/d/e/1FAIpQLSc9LinI5N4-bX89r-GrES8QiHFLpVgXoWE1U0BAHwP4uUOiVw/viewform?usp=sf_link" class="rounded-xl shadow-xl bg-black bg-opacity-5 md:my-0 my-2.5 mx-5 p-2.5 hover:shadow-md hover:text-black">0 отзыв(а/ов)</a>
+                        <a id="status" href="https://docs.google.com/forms/d/e/1FAIpQLSd5Ic2WhQSmDrrI6nVmJbufpGp-lXkPgKCbbc6723WxfdN-gA/viewform?usp=sf_link" class="rounded-xl shadow-xl bg-black bg-opacity-5 md:my-0 my-2.5 mx-5 p-2.5 hover:shadow-md hover:text-black">не занят</a>
+                        <a id="order" href="https://docs.google.com/forms/d/e/1FAIpQLSd5Ic2WhQSmDrrI6nVmJbufpGp-lXkPgKCbbc6723WxfdN-gA/viewform?usp=sf_link" class="rounded-xl shadow-xl bg-black bg-opacity-5 md:my-0 my-2.5 mx-5 p-2.5 hover:shadow-md hover:text-black">0 заказ(а/ов)</a>                        
+                </div>    
+            </div>
+            
+        </div>
+        <div id="cards">
+            <div class="justify-center flex h-full m-10">
+                <div id="data_info" class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl w-full xl:w-1/2 md:w-2/3 min-h-20 shadow-2xl p-10">
+                    <details class="text-left my-5">
+                        <summary>компетенции</summary>
+                        <p id="comp">описание</p>
+                    </details>
+                    <details class="text-left my-5">
+                        <summary>соцсети</summary>
+                        <p id="cc">описание</p>
+                    </details>
+                    <details class="text-left my-5">
+                        <summary>описание</summary>
+                        <p id="dis">описание</p>
+                    </details>
+                    <details class="text-left my-5">
+                        <summary>отзывы</summary>
+                        <p id="i_fb">
+                        </p>
+                    </details>                   
+                </div>
+            </div>
+            <div class="justify-center flex h-full m-10">
+                <a id="data_info" href="https://docs.google.com/forms/d/e/1FAIpQLSd5Ic2WhQSmDrrI6nVmJbufpGp-lXkPgKCbbc6723WxfdN-gA/viewform?usp=sf_link" class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl w-full xl:w-1/2 md:w-2/3 min-h-20 shadow-2xl hover:shadow-md hover:text-black p-5">сделать заказ</a>
+            </div>
+            <div class="justify-center flex h-full m-10">
+                <a id="data_info" href="https://docs.google.com/forms/d/e/1FAIpQLSc9LinI5N4-bX89r-GrES8QiHFLpVgXoWE1U0BAHwP4uUOiVw/viewform?usp=sf_link" class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl w-full xl:w-1/2 md:w-2/3 min-h-20 shadow-2xl hover:shadow-md hover:text-black p-5">написать отзыв</a>
+            </div>
+            <hr class="border-2 border-dashed border-black">
+            <p class="font-bold tracking-widest underline my-10">ПАРТНЕРЫ</p>
+            <div class="justify-center flex h-full m-10">
+                <div id="i_p" class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl w-full xl:w-1/2 md:w-2/3 min-h-20 shadow-2xl p-10">                    
+                </div>
+            </div>
+        </div>
     </div>
 
-    <hr class="border-0 border-t-2 border-dashed">
+    <footer class="p-10">
+        <p>@NoneLovely</p>
+    </footer>
 
-    <div class="my-10 md:mx-52">
-        <details class="text-white">
-            <summary class="p-5">NoneLovely</summary>
-            <p class="p-5 m-5 border-2 border-dashed rounded-3xl bg-black bg-opacity-40 shadow-2xl">Копирайтер, дизайнер, разработчик (python, c, c++, c#, Arduino, js, google script, html, css)</p>
-        </details>
-
-        <details class="text-white">
-            <summary class="p-5">Man-IT</summary>
-            <p class="p-5 m-5 border-2 border-dashed rounded-3xl bg-black bg-opacity-40 shadow-2xl">Бот системы, CRM, обучение, сайты, реклама и пиар, поставка IT услуг</p>
-        </details>
-
-        <details class="text-white">
-            <summary class="p-5">О проекте</summary>
-            <p class="p-5 m-5 border-2 border-dashed rounded-3xl bg-black bg-opacity-40 shadow-2xl">Проект нацелен на продажу и поставку пользователям web приложений, ботов, программ, в виде кода и услуг предоставляемых Man-IT и NoneLovely</p>
-        </details>
-    </div>
-
-    <hr class="border-0 border-t-2 border-dashed">
-
-    <p class="text-center mt-5 text-3xl text-white">услуги</p>
-
-    <div id="apps" class="text-white md:mx-52 p-5 xl:grid xl:grid-cols-2 items-center p-5">    
-    
-    </div>
-
-    <hr class="border-0 border-t-2 border-dashed">
-
-    <div class="text-white text-center mx-10 pt-20 pb-5 bg-black bg-opacity-40">
-        <p>разработка @NoneLovely совместно с @Man-IT</p>
-    </div>
-    </div>
     <script src="store.js"></script>
 </body>
 </html>
