@@ -1,0 +1,87 @@
+body {
+    font-family: 'DEC Terminal Modern', sans-serif;
+    font-size: 1.5em;
+}
+
+#t_1 {
+    padding: 72px 0px 20px;
+    position: relative;
+    background-color: #000000;
+    margin-bottom: 50%;
+}
+
+#t_1::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 50%;
+    padding-top: 30%;
+    background: #000000;
+    -ms-transform: skew(0, 15deg) translate(0, 50%);
+    -webkit-transform: skew(0, 15deg) translate(0, 50%);
+    -moz-transform: skew(0, 15deg) translate(0, 50%);
+    -o-transform: skew(0, 15deg) translate(0, 50%);
+    transform: skew(0, 15deg) translate(0, 50%);
+}
+
+#t_1::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: '';
+    width: 50%;
+    padding-top: 30%;
+    background: #000000;
+    -ms-transform: skew(0, -15deg) translate(0, 50%);
+    -webkit-transform: skew(0, -15deg) translate(0, 50%);
+    -moz-transform: skew(0, -15deg) translate(0, 50%);
+    -o-transform: skew(0, -15deg) translate(0, 50%);
+    transform: skew(0, -15deg) translate(0, 50%);
+    z-index: 0;
+}
+
+#t_0 {
+    padding: 72px 0px 20px;
+    position: relative;
+    background-color: #ffffff;
+    margin-bottom: 5%;
+}
+
+#t_0::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 50%;
+    padding-top: 30%;
+    background: #ffffff;
+    -ms-transform: skew(0, 15deg) translate(0, 50%);
+    -webkit-transform: skew(0, 15deg) translate(0, 50%);
+    -moz-transform: skew(0, 15deg) translate(0, 50%);
+    -o-transform: skew(0, 15deg) translate(0, 50%);
+    transform: skew(0, 15deg) translate(0, 50%);
+}
+
+#t_0::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: '';
+    width: 50%;
+    padding-top: 30%;
+    background: #ffffff;
+    -ms-transform: skew(0, -15deg) translate(0, 50%);
+    -webkit-transform: skew(0, -15deg) translate(0, 50%);
+    -moz-transform: skew(0, -15deg) translate(0, 50%);
+    -o-transform: skew(0, -15deg) translate(0, 50%);
+    transform: skew(0, -15deg) translate(0, 50%);
+}
+
+#data_info {
+    z-index: 1;
+}
+
+.data_info {
+    z-index: 1;
+}
